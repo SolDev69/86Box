@@ -157,6 +157,10 @@ extern "C" {
 #include <86box/ui.h>
 #include <86box/runctl.h>
 
+/* Some Unix ioctl headers define CR0 as a terminal delay flag. */
+#ifdef CR0
+#    undef CR0
+#endif
 #include "../cpu/cpu.h"
 #include <86box/plat.h>
 
